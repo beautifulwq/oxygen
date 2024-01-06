@@ -54,7 +54,7 @@ def getRawRGB(patientNum,dataDir):
     print('processing ' +str(rawFile.name))
     count = 0
     success = 1
-    while count<vidLen:
+    while count<vidLen-1:
         success, image = rawVid.read()
         # process the image for R, G, B
         # the openCV package is using BGR protocol
@@ -125,4 +125,7 @@ def procRawData(nums,loadData=loadDataFlag,dataDir=dataDir,procDir=procDir):
 # Code to run --------------------------------------------
 
 if __name__ == '__main__':
-    rgbData = procRawData(patientNums,loadDataFlag) # plot all patients
+    number=4
+    rgbArray=getRawRGB(number,"data/raw-videos")
+    savePath=Path.cwd().joinpath("data/ppg/wqright")
+    saveRGB(rgbArray,str(number),savePath,1)

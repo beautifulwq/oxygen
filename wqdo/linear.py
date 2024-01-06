@@ -52,9 +52,8 @@ def linearRegression(numberNO: int):
     return {linearRegress[0], linearRegress[1]}
 
 
-list = []
-for id in range(100001, 100007):
-    list.append(linearRegression(id))
-
-# list.append(linearRegression(100006))
-print(*list, sep="\n")
+if __name__ == "__main__":
+    list = []
+    for id in range(100001, 100007):
+        list.append(linearRegression(id))
+    print(*list, sep="\n")
